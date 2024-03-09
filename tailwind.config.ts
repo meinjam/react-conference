@@ -32,8 +32,8 @@ const config: Config = {
         'theme-sliver': '#cdcdcd',
       },
       fontSize: {
-        hero: '140px',
-        'heading-1': '48px',
+        hero: ['140px', { lineHeight: '140px', fontWeight: 'bold' }],
+        'heading-1': ['48px', { lineHeight: '58px', fontWeight: 'bold' }],
         'heading-2': '24px',
         'heading-3': '20px',
         'heading-4': '18px',

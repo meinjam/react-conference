@@ -11,9 +11,9 @@ const Conference = async () => {
   console.log('error', error);
 
   return (
-    <section id='conference-details' className='pt-5 mt-60'>
+    <section id='conference-details' className='pt-5 mt-60 mb-24'>
       <div className='container'>
-        <h1 className='text-heading-1 font-bold text-center leading-[58px]'>Conference</h1>
+        <h1 className='text-heading-1 text-center'>Conference</h1>
 
         {data?.conferences?.map((conference: any) => (
           <Link

@@ -36,7 +36,7 @@ const Footer = () => {
             </a>
           </li>
         </ul>
-        <p className='text-heading-4 leading-6'>© {new Date().getFullYear()} Lemonhive. All rights reserved.</p>
+        <p className='text-heading-5 leading-6'>© {new Date().getFullYear()} Lemonhive. All rights reserved.</p>
       </div>
     </footer>
   );
