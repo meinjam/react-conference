@@ -5,7 +5,7 @@ export const { getClient } = registerApolloClient(() => {
   return new ApolloClient({
     cache: new InMemoryCache(),
     link: new HttpLink({
-      uri: 'https://api.react-finland.fi/graphql',
+      uri: process?.env?.API_ENDPOINT,
     }),
   });
 });

@@ -1,18 +1,13 @@
-import { getClient } from '@/lib/graphql/customApolloClient';
-import { getAllConferences } from '@/lib/graphql/queries';
+import Conference from '@/components/homepage/Conference.Component';
+import Showcase from '@/components/homepage/Showcase.Component';
+import Sponsor from '@/components/homepage/Sponsor.Component';
 
 export default async function Home() {
-  const { data, loading, error } = await getClient().query({ query: getAllConferences });
-
-  console.log('data', data);
-  console.log('loading', loading);
-  console.log('error', error);
-
   return (
-    <div>
-      {/* <DndProvider backend={HTML5Backend}> */}
-      <h1>Hello</h1>
-      {/* </DndProvider> */}
-    </div>
+    <>
+      <Showcase />
+      <Conference />
+      <Sponsor />
+    </>
   );
 }
