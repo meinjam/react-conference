@@ -8,13 +8,9 @@ import {
   SponsorsComponent,
 } from '@/components/conference/ConferenceDetails.Component';
 import DraggableSidebar from '@/components/conference/DraggableSidebar.Component';
+import { ConferenceTagType, SingleConferenceDataType } from '@/utils/interfaces';
 
-export type ConferenceTagType = {
-  id: number;
-  name: string;
-};
-
-const ConferenceRow = ({ data }: { data: any }) => {
+const ConferenceRow = ({ data }: { data: SingleConferenceDataType }) => {
   const [conferenceTags, setConferenceTags] = useState<ConferenceTagType[]>([
     { id: 1, name: 'Organizer' },
     { id: 2, name: 'Speakers' },

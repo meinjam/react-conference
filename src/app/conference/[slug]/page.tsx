@@ -2,7 +2,7 @@ import React from 'react';
 import { getClient } from '@/lib/graphql/customApolloClient';
 import { getSingleConference } from '@/lib/graphql/queries';
 import ConferenceRow from '@/components/conference/ConferenceRow.Component';
-import Loading from './loading';
+import Loading from '@/app/conference/[slug]/loading';
 
 const ConferencePage = async ({ params }: { params: { slug: string } }) => {
   const { data, loading, error } = await getClient().query({

@@ -1,16 +1,25 @@
-import React, { Key } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import TwitterSvg from '@/assets/img/socials/Vector.svg';
 import LinkedinSvg from '@/assets/img/socials/Social icon.svg';
 import DribbleSvg from '@/assets/img/socials/Social icon-1.svg';
 import GithubSvg from '@/assets/img/socials/Social icon-2.svg';
 import dayjs from 'dayjs';
+import {
+  IntervalType,
+  OrganizeType,
+  ScheduleType,
+  SessionType,
+  SingleCardType,
+  SpeakerType,
+  SponsorType,
+} from '@/utils/interfaces';
 
-export const OrganizerComponent = ({ data }: { data: any }) => {
+export const OrganizerComponent = ({ data }: { data: OrganizeType[] }) => {
   return (
     <div className='space-y-6'>
       {data?.length !== 0 ? (
-        data?.map((organizer: any, i: 'Key | null | undefined') => (
+        data?.map((organizer: OrganizeType, i: number) => (
           <div key={i} className='bg-white rounded-lg p-4 pr-10'>
             <SingleCard heading={organizer?.name} description={organizer?.about} image={organizer?.image?.url} />
           </div>
@@ -22,11 +31,11 @@ export const OrganizerComponent = ({ data }: { data: any }) => {
   );
 };
 
-export const SpeakersComponent = ({ data }: { data: any }) => {
+export const SpeakersComponent = ({ data }: { data: SpeakerType[] }) => {
   return (
     <div className='space-y-6'>
       {data?.length !== 0 ? (
-        data?.map((speaker: any, i: 'Key | null | undefined') => (
+        data?.map((speaker: SpeakerType, i: number) => (
           <div key={i} className='bg-white rounded-lg p-4 pr-10'>
             <SingleCard
               heading={speaker?.name}
@@ -43,24 +52,24 @@ export const SpeakersComponent = ({ data }: { data: any }) => {
   );
 };
 
-export const ScheduleComponent = ({ data }: { data: any }) => {
+export const ScheduleComponent = ({ data }: { data: ScheduleType[] }) => {
   return (
     <div className='space-y-6'>
       {data?.length !== 0 ? (
-        data?.map((schedule: any, i: Key) => (
+        data?.map((schedule: ScheduleType, i: number) => (
           <div key={i} className='bg-white rounded-lg px-10 py-6'>
             <div className='mb-5 flex items-center justify-between'>
               <h4 className='text-heading-3 font-bold'>{dayjs(schedule?.day).format('MMMM DD, YYYY')}</h4>
               <p className='text-theme-blue-gulf text-heading-5 line-clamp-2'>{dayjs(schedule?.day).format('dddd')}</p>
             </div>
             <div className='space-y-4'>
-              {schedule?.intervals?.map((interval: any, j: Key) => (
+              {schedule?.intervals?.map((interval: IntervalType, j: number) => (
                 <div key={j} className='text-heading-5 text-[#0A142F]'>
                   <h1>
                     Duration : {interval?.begin} - {interval?.end}
                   </h1>
                   <ul className='list-disc pl-10'>
-                    {interval?.sessions?.map((session: any, k: Key) => (
+                    {interval?.sessions?.map((session: SessionType, k: number) => (
                       <li key={k}>{session?.title}</li>
                     ))}
                   </ul>
@@ -76,11 +85,11 @@ export const ScheduleComponent = ({ data }: { data: any }) => {
   );
 };
 
-export const SponsorsComponent = ({ data }: { data: any }) => {
+export const SponsorsComponent = ({ data }: { data: SponsorType[] }) => {
   return (
     <div className='space-y-6'>
       {data?.length !== 0 ? (
-        data?.map((sponsor: any, i: Key) => (
+        data?.map((sponsor: SponsorType, i: number) => (
           <div key={i} className='bg-white rounded-lg p-4 pr-10'>
             <SingleCard heading={sponsor?.name} description={sponsor?.about} image={sponsor?.image?.url} />
           </div>
@@ -91,18 +100,6 @@ export const SponsorsComponent = ({ data }: { data: any }) => {
     </div>
   );
 };
-
-interface SingleCardType {
-  heading: string;
-  description: string;
-  image: string;
-  socials?: {
-    dribble: string | null;
-    github: string | null;
-    linkedin: string | null;
-    twitter: string | null;
-  };
-}
 
 const SingleCard = ({ heading, description, image, socials }: SingleCardType) => {
   return (

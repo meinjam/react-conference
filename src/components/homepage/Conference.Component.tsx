@@ -1,5 +1,6 @@
 import { getClient } from '@/lib/graphql/customApolloClient';
 import { getAllConferences } from '@/lib/graphql/queries';
+import { MainConferenceDataType } from '@/utils/interfaces';
 import dayjs from 'dayjs';
 import Link from 'next/link';
 import React, { Key } from 'react';
@@ -19,7 +20,7 @@ const Conference = async () => {
         <div className='relative'>
           <div className='border-2-2 absolute border-opacity-20 border-theme-storm-gray h-[96%] border left-1/2 -z-10'></div>
 
-          {data?.conferences?.map((conference: any, i: Key | any) => (
+          {data?.conferences?.map((conference: MainConferenceDataType, i: number) => (
             <div key={conference?.id} className='mb-16 flex justify-between items-start'>
               {/* Conference Date */}
               <div className={`w-5/12 pt-4 ${i % 2 === 0 ? 'order-3' : ''}`}>

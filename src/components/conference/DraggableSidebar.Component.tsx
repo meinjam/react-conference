@@ -3,7 +3,7 @@ import { cn } from '@/lib/cn/cn';
 import Image from 'next/image';
 import UpDownIcon from '@/assets/img/up-down.svg';
 import { ReactSortable } from 'react-sortablejs';
-import { ConferenceTagType } from './ConferenceRow.Component';
+import { ConferenceTagType } from '@/utils/interfaces';
 
 interface ComponentTypes {
   activeItem: ConferenceTagType;
