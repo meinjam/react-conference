@@ -31,6 +31,9 @@ const config: Config = {
         'theme-bianca': '#f9fafb',
         'theme-sliver': '#cdcdcd',
       },
+      boxShadow: {
+        'c-card-shadow': '0px 4px 8px 0px rgba(0,0,0,0.06)',
+      },
       fontSize: {
         hero: ['140px', { lineHeight: '140px', fontWeight: 'bold' }],
         'heading-1': ['48px', { lineHeight: '58px', fontWeight: 'bold' }],
@@ -38,7 +41,7 @@ const config: Config = {
         'heading-3': '20px',
         'heading-4': '18px',
         'heading-5': '16px',
-        'heading-6': '14px',
+        'heading-6': ['14px', { lineHeight: '17px' }],
         'heading-7': '12px',
       },
       screens: {
