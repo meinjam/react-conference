@@ -19,8 +19,47 @@ export const getSingleConference = gql`
     conference(id: $id) {
       name
       slogan
+
       organizers {
-        company
+        name
+        about
+        image {
+          url
+        }
+      }
+
+      speakers {
+        name
+        about
+        image {
+          url
+        }
+        social {
+          twitter
+          linkedin
+          dribble
+          github
+        }
+      }
+
+      schedules {
+        day
+        description
+        intervals {
+          begin
+          end
+          sessions {
+            title
+          }
+        }
+      }
+
+      sponsors {
+        name
+        about
+        image {
+          url
+        }
       }
     }
   }

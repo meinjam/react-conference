@@ -7,9 +7,9 @@ import React from 'react';
 const Conference = async () => {
   const { data, loading, error } = await getClient().query({ query: getAllConferences });
 
-  console.log('data', data);
-  console.log('loading', loading);
-  console.log('error', error);
+  // console.log('data', data);
+  // console.log('loading', loading);
+  // console.log('error', error);
 
   return (
     <section id='conference-details' className='pt-5 mt-60 mb-24'>
@@ -41,7 +41,7 @@ const Conference = async () => {
               <div className={`w-5/12 group ${i % 2 === 0 ? 'order-1' : 'order-3'}`}>
                 <Link
                   href={`/conference/${conference?.id}`}
-                  className='shadow-c-card-shadow rounded-lg px-4 py-7 block border-t-4 border-theme-sliver group-hover:border-theme-yellow group-hover:shadow-lg duration-500 ease-in-out'
+                  className='shadow-c-card-shadow rounded-lg px-4 py-7 block border-t-4 border-theme-sliver group-hover:border-theme-yellow group-hover:shadow-lg hover:-translate-y-1 duration-500 ease-in-out'
                 >
                   <div className='flex items-start gap-4'>
                     <div className='size-[16px] bg-theme-yellow rounded-full flex items-center justify-center mt-[2px]'>
