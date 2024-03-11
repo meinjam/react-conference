@@ -101,9 +101,10 @@ const Showcase = () => {
         <div className='absolute bottom-0 -right-[60px] -z-10'>
           <Image src={LeftCoverOrnament} width={105} alt='left cover svg' />
         </div>
-        <div className='size-[175px] bg-[#2286BE]/[0.5] absolute -left-3 rounded-full top-10 blur-3xl'></div>
+        <HeroLeftImgBlur />
         <div className='relative h-52 w-40 object-cover object-center'>
           <Image className='rounded-[20px]' src={LeftCover} fill alt='left cover image' />
+          HeroLeftImgBlur
         </div>
       </div>
 
@@ -115,34 +116,21 @@ const Showcase = () => {
 
       {/* Top Right blur */}
       <TopRightBlur />
-
-      {/* Mobile Blur */}
-      <MobileTopBlur />
     </>
   );
 };
 
 export default Showcase;
 
-const MobileTopBlur = () => {
-  return (
-    <div className='md:hidden absolute top-0 left-0 opacity-90'>
-      <Image src={MobileTopGradient} height={600} width={900} alt='top left blur svg' />
-    </div>
-  );
-};
-
 const TopLeftBlur = () => {
   return (
-    <div className='absolute top-0 left-0 -z-10 opacity-50'>
-      <Image src={TopLeftBlurSvg} height={583} width={583} alt='top left blur svg' />
-    </div>
+    <div className='absolute top-0 -left-8 md:left-0 -z-10 size-56 md:size-96 bg-[#7C3EFF] md:bg-[#d6c2ff] blur-[140px] md:blur-[120px] rounded-full'></div>
   );
 };
 
 const TopLeftCube = () => {
   return (
-    <div className='absolute top-0 left-0 -z-10 opacity-70'>
+    <div className='absolute top-0 left-0 -z-10 opacity-40 md:opacity-50'>
       <Image src={TopLeftCubeSvg} height={428} alt='top left cube svg' />
     </div>
   );
@@ -150,8 +138,12 @@ const TopLeftCube = () => {
 
 const TopRightBlur = () => {
   return (
-    <div className='absolute top-0 right-0 -z-10 opacity-50'>
-      <Image src={TopRightBlurSvg} height={612} width={612} alt='top right blur svg' />
-    </div>
+    <div className='absolute -top-10 right-0 md:top-0 md:right-0 -z-10 size-36 md:size-[412px] bg-[#BE229C] md:bg-[#ebb9e0] blur-[100px] md:blur-[180px] rounded-full'></div>
+  );
+};
+
+const HeroLeftImgBlur = () => {
+  return (
+    <div className='size-[175px] md:size-60 bg-[#2286BE]/[0.5] md:bg[#b2e5e8] absolute -left-3 rounded-full top-10 blur-[70px]'></div>
   );
 };

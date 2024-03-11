@@ -17,15 +17,15 @@ import {
 
 export const OrganizerComponent = ({ data }: { data: OrganizeType[] }) => {
   return (
-    <div className='space-y-5 xl:space-y-6'>
+    <div className='details-card-parent'>
       {data?.length !== 0 ? (
         data?.map((organizer: OrganizeType, i: number) => (
-          <div key={i} className='bg-white rounded-lg p-4 pr-10'>
+          <div key={i} className='details-card-child'>
             <SingleCard heading={organizer?.name} description={organizer?.about} image={organizer?.image?.url} />
           </div>
         ))
       ) : (
-        <div className='bg-white rounded-lg p-10 text-heading-3 font-bold'>Sorry, no data found!</div>
+        <div className='details-not-found'>Sorry, no data found!</div>
       )}
     </div>
   );
@@ -33,10 +33,10 @@ export const OrganizerComponent = ({ data }: { data: OrganizeType[] }) => {
 
 export const SpeakersComponent = ({ data }: { data: SpeakerType[] }) => {
   return (
-    <div className='space-y-5 xl:space-y-6'>
+    <div className='details-card-parent'>
       {data?.length !== 0 ? (
         data?.map((speaker: SpeakerType, i: number) => (
-          <div key={i} className='bg-white rounded-lg p-4 pr-10'>
+          <div key={i} className='details-card-child'>
             <SingleCard
               heading={speaker?.name}
               description={speaker?.about}
@@ -46,7 +46,7 @@ export const SpeakersComponent = ({ data }: { data: SpeakerType[] }) => {
           </div>
         ))
       ) : (
-        <div className='bg-white rounded-lg p-10 text-heading-3 font-bold'>Sorry, no data found!</div>
+        <div className='details-not-found'>Sorry, no data found!</div>
       )}
     </div>
   );
@@ -54,7 +54,7 @@ export const SpeakersComponent = ({ data }: { data: SpeakerType[] }) => {
 
 export const ScheduleComponent = ({ data }: { data: ScheduleType[] }) => {
   return (
-    <div className='space-y-5 xl:space-y-6'>
+    <div className='details-card-parent'>
       {data?.length !== 0 ? (
         data?.map((schedule: ScheduleType, i: number) => (
           <div key={i} className='bg-white rounded-lg px-5 md:px-8 xl:px-10 py-[14px] md:py-5 xl:py-6'>
@@ -83,7 +83,7 @@ export const ScheduleComponent = ({ data }: { data: ScheduleType[] }) => {
           </div>
         ))
       ) : (
-        <div className='bg-white rounded-lg p-10 text-heading-3 font-bold'>Sorry, no data found!</div>
+        <div className='details-not-found'>Sorry, no data found!</div>
       )}
     </div>
   );
@@ -91,15 +91,15 @@ export const ScheduleComponent = ({ data }: { data: ScheduleType[] }) => {
 
 export const SponsorsComponent = ({ data }: { data: SponsorType[] }) => {
   return (
-    <div className='space-y-5 xl:space-y-6'>
+    <div className='details-card-parent'>
       {data?.length !== 0 ? (
         data?.map((sponsor: SponsorType, i: number) => (
-          <div key={i} className='bg-white rounded-lg p-4 pr-10'>
+          <div key={i} className='details-card-child'>
             <SingleCard heading={sponsor?.name} description={sponsor?.about} image={sponsor?.image?.url} />
           </div>
         ))
       ) : (
-        <div className='bg-white rounded-lg p-10 text-heading-3 font-bold'>Sorry, no data found!</div>
+        <div className='details-not-found'>Sorry, no data found!</div>
       )}
     </div>
   );
@@ -109,7 +109,7 @@ const SingleCard = ({ heading, description, image, socials }: SingleCardType) =>
   return (
     <div className='flex md:items-center gap-4 md:gap-5 lg:gap-8 xl:gap-10'>
       <div className='relative size-[88px] md:size-24 lg:size-32 xl:size-36 shrink-0'>
-        <Image src={image} alt='organizer image' fill className='object-cover object-center rounded-lg' />
+        <Image src={image} alt='organizer image' fill className='object-contain object-center rounded-lg' />
       </div>
       <div className='w-full'>
         <div className='flex flex-col md:flex-row justify-between gap-2 md:items-center mb-2 lg:mb-5 flex-wrap'>

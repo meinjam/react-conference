@@ -54,7 +54,7 @@ const DraggableSidebar = ({ activeItem, setActiveItem, conferenceTags, setConfer
 
     <ReactSortable
       tag={'ul'}
-      className='space-y-6 md:space-y-5 lg:space-y-7 xl:space-y-8'
+      className='sidebar-parent'
       list={conferenceTags}
       setList={setConferenceTags}
       {...sortableOptions}
@@ -64,8 +64,8 @@ const DraggableSidebar = ({ activeItem, setActiveItem, conferenceTags, setConfer
           key={tag.id}
           onClick={() => setActiveItem(tag)}
           className={cn(
-            'text-heading-3 cursor-pointer rounded-lg border border-[#d9d9d980] flex items-center gap-10 md:gap-4 lg:gap-9 xl:gap-11 p-2',
-            activeItem === tag ? 'bg-theme-yellow border-theme-yellow shadow-lg' : 'bg-[#feffff]'
+            'sidebar-child',
+            activeItem === tag ? 'bg-theme-yellow border-theme-yellow shadow-lg' : 'bg-[#ffffff]'
           )}
         >
           <div className='bg-white p-2 md:p-3 xl:px-4 xl:py-[17px] rounded-lg'>

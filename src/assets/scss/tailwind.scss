@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.section-heading {
+}
+
+// Home Page
+.sponsor-img-div {
+  @apply flex items-center justify-center gap-14 flex-wrap gap-y-4;
+}
+
+.sponsor-img {
+  @apply h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3];
+}
+
+.sponsor-title {
+  @apply text-heading-7 md:text-heading-5 mb-4 text-center text-[#667085];
+}
+
+// Conference Details Page
+.details-card-parent {
+  @apply space-y-5 xl:space-y-6;
+}
+
+.details-card-child {
+  @apply bg-white rounded-lg p-4 pr-10;
+}
+
+.details-not-found {
+  @apply bg-white rounded-lg p-10 text-heading-3 font-bold;
+}
+
+.sidebar-parent {
+  @apply space-y-6 md:space-y-5 lg:space-y-7 xl:space-y-8;
+}
+
+.sidebar-child {
+  @apply text-heading-3 cursor-pointer rounded-lg border border-[#d9d9d980] flex items-center gap-10 md:gap-4 lg:gap-9 xl:gap-11 p-2;
+}
