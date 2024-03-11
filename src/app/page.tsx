@@ -7,7 +7,7 @@ export default async function Home() {
     <>
       <Showcase />
       <Conference />
-      {/* <Sponsor /> */}
+      <Sponsor />
     </>
   );
 }

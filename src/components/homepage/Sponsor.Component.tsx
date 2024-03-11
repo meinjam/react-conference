@@ -12,32 +12,68 @@ import BronzeFour from '@/assets/img/sponsors/bronze-4.svg';
 
 const Sponsor = () => {
   return (
-    <section className='bg-theme-bianca py-24'>
+    <section className='bg-theme-bianca py-14 md:py-24'>
       <div className='container'>
-        <h1 className='text-center text-heading-1 mb-8'>Our Sponsor</h1>
+        <h1 className='text-center text-heading-2 font-bold md:text-heading-1 mb-6 md:mb-8'>Our Sponsor</h1>
         <div className='space-y-8'>
           <div>
-            <h1 className='text-heading-5 mb-4 text-center text-[#667085]'>🥇 Gold Sponsor</h1>
+            <h1 className='text-heading-7 md:text-heading-5 mb-4 text-center text-[#667085]'>🥇 Gold Sponsor</h1>
             <div className='flex items-center justify-center gap-14'>
-              <Image width={217} src={GoldOne} alt='gold sponsor one' />
-              <Image width={217} src={GoldTwo} alt='gold sponsor two' />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={GoldOne?.src}
+                alt='gold sponsor one'
+              />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={GoldTwo?.src}
+                alt='gold sponsor two'
+              />
             </div>
           </div>
           <div>
-            <h1 className='text-heading-5 mb-4 text-center text-[#667085]'>🥈Silver Sponsors</h1>
-            <div className='flex items-center justify-center gap-14'>
-              <Image width={217} src={SilverOne} alt='silver sponsor one' />
-              <Image width={217} src={SilverTwo} alt='silver sponsor two' />
-              <Image width={217} src={SilverThree} alt='silver sponsor two' />
+            <h1 className='text-heading-7 md:text-heading-5 mb-4 text-center text-[#667085]'>🥈Silver Sponsors</h1>
+            <div className='flex items-center justify-center gap-14 flex-wrap gap-y-4'>
+              <img
+                className='flex-b h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={SilverOne?.src}
+                alt='silver sponsor one'
+              />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={SilverTwo?.src}
+                alt='silver sponsor two'
+              />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={SilverThree?.src}
+                alt='silver sponsor two'
+              />
             </div>
           </div>
           <div>
-            <h1 className='text-heading-5 mb-4 text-center text-[#667085]'>🥉Bronze Sponsors</h1>
-            <div className='flex items-center justify-center gap-14'>
-              <Image width={217} src={BronzeOne} alt='bronze sponsor one' />
-              <Image width={217} src={BronzeTwo} alt='bronze sponsor two' />
-              <Image width={217} src={BronzeThree} alt='bronze sponsor two' />
-              <Image width={217} src={BronzeFour} alt='bronze sponsor two' />
+            <h1 className='text-heading-7 md:text-heading-5 mb-4 text-center text-[#667085]'>🥉Bronze Sponsors</h1>
+            <div className='flex items-center justify-center gap-14 flex-wrap gap-y-4'>
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={BronzeOne?.src}
+                alt='bronze sponsor one'
+              />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={BronzeTwo?.src}
+                alt='bronze sponsor two'
+              />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={BronzeThree?.src}
+                alt='bronze sponsor two'
+              />
+              <img
+                className='h-8 md:h-12 lg:h-16 object-contain aspect-[12/3] md:aspect-[8/3] lg:aspect-[9/3] xl:aspect-[11/3]'
+                src={BronzeFour?.src}
+                alt='bronze sponsor two'
+              />
             </div>
           </div>
         </div>

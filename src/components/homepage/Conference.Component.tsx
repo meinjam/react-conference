@@ -50,7 +50,7 @@ const Conference = async () => {
                   className='shadow-c-card-shadow rounded-lg p-[18px] md:px-4 md:py-7 block border-t-4 border-theme-sliver group-hover:border-theme-yellow group-hover:shadow-lg hover:-translate-y-1 duration-500 ease-in-out'
                 >
                   <div className='flex items-start gap-4'>
-                    <div className='w-4 h-4 relative flex-shrink-0 mt-[2px]'>
+                    <div className='w-4 h-4 relative flex-shrink-0 mt-1 md:mt-[2px]'>
                       <Image src={BulletIcon} alt='bullet icon' fill className='object-cover object-center' />
                     </div>
                     <div>

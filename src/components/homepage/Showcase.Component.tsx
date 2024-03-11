@@ -97,7 +97,7 @@ const Showcase = () => {
       </section>
 
       {/* Mobile Bottom Image */}
-      <div className='relative md:hidden pt-16 px-6 overflow-x-hidden'>
+      <div className='relative lg:hidden pt-16 px-6 overflow-x-hidden'>
         <div className='absolute bottom-0 -right-[60px] -z-10'>
           <Image src={LeftCoverOrnament} width={105} alt='left cover svg' />
         </div>
@@ -126,8 +126,8 @@ export default Showcase;
 
 const MobileTopBlur = () => {
   return (
-    <div className='md:hidden absolute top-0 left-0 opacity-100'>
-      <Image src={MobileTopGradient} height={600} width={431} alt='top left blur svg' />
+    <div className='md:hidden absolute top-0 left-0 opacity-90'>
+      <Image src={MobileTopGradient} height={600} width={900} alt='top left blur svg' />
     </div>
   );
 };
