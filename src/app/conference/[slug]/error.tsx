@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Error({ reset }: { reset: () => void }) {
   return (
-    <section className='my-40'>
+    <section className='my-20 md:my-40'>
       <div className='container text-center'>
         <h1 className='text-hero'>404</h1>
         <h2 className='text-heading-3 my-10'>Sorry the page is looking for is not found.</h2>

@@ -16,11 +16,11 @@ const config: Config = {
       container: {
         center: true,
         padding: {
-          DEFAULT: '1rem',
+          DEFAULT: '1.5rem',
           sm: '2rem',
-          lg: '0rem',
-          xl: '0rem',
-          '2xl': '0rem',
+          lg: '3rem',
+          // xl: '0rem',
+          // '2xl': '0rem',
         },
       },
       colors: {
@@ -45,13 +45,36 @@ const config: Config = {
         'heading-7': '12px',
       },
       screens: {
-        '2xl': '1320px',
+        '2xl': '1410px',
       },
       borderRadius: {
         '30': '30px',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addComponents }: { addComponents: any }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '100%',
+          },
+          '@screen md': {
+            maxWidth: '100%',
+          },
+          '@screen lg': {
+            maxWidth: '100%',
+          },
+          '@screen xl': {
+            maxWidth: '100%',
+          },
+          '@screen 2xl': {
+            maxWidth: '1410px',
+          },
+        },
+      });
+    },
+  ],
 };
 export default config;

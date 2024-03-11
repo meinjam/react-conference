@@ -95,8 +95,8 @@ export default Showcase;
 
 const TopLeftBlur = () => {
   return (
-    <div className='absolute top-0 left-0 -z-10 opacity-70'>
-      <Image src={TopLeftBlurSvg} height={383} width={383} alt='top left blur svg' />
+    <div className='absolute top-0 left-0 -z-10 opacity-50'>
+      <Image src={TopLeftBlurSvg} height={583} width={583} alt='top left blur svg' />
     </div>
   );
 };
@@ -111,8 +111,8 @@ const TopLeftCube = () => {
 
 const TopRightBlur = () => {
   return (
-    <div className='absolute top-0 right-0 -z-10 opacity-70'>
-      <Image src={TopRightBlurSvg} height={412} width={412} alt='top right blur svg' />
+    <div className='absolute top-0 right-0 -z-10 opacity-50'>
+      <Image src={TopRightBlurSvg} height={612} width={612} alt='top right blur svg' />
     </div>
   );
 };
