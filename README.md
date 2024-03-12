@@ -1,8 +1,8 @@
-![CHEESE!](./src/assets/img/demo.png)
+![CHEESE!](./public/og-image.jpg)
 
 ## &nbsp;
 
-<h1 align="center">React Conference App </h1>
+<h1 align="center">React Conference App</h1>
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@
 
 ## About
 
-This is a simple next js conference app. Here are two pages. One landing page where you can see all conference list and this data is dynamic. When you click on the single conference card it go to new page. In this details page you can see conference all informationand this data is totally dynamic. technology used:
+This application is a basic conference app built with Next.js. It consists of two main pages: a landing page displaying a dynamic list of conferences, and a details page showing comprehensive information about a selected conference. The technology stack includes:
 
 - Next Js 14
 - Tailwind CSS
@@ -36,8 +36,8 @@ This is a simple next js conference app. Here are two pages. One landing page wh
 - Clone the project
 
   > ```bash
-  > git clone https://github.com/meinjam/project-name.git
-  > cd project-name
+  > git clone https://github.com/meinjam/react-conference.git
+  > cd react-conference
   > ```
 
 - Install required libraries for project
@@ -97,8 +97,8 @@ _Note: Now this will run the app in the development mode and Open http://localho
   _Holds all public file._
 - **_src :_** \
   _Holds js files which will be mostly edited._
-  - **_App.js :_** \
-    _Holds main Tasks page._
+  - **_app :_** \
+    _Holds all the pages._
   - **_assets :_** \
     _Holds the static files like scss amd images._
     - **_scss :_**\
@@ -107,10 +107,10 @@ _Note: Now this will run the app in the development mode and Open http://localho
       _Holds the required images for pages and components._
   - **_components :_** \
     _Holds all the component file regarding every page._
-  - **_pages :_** \
-    _Holds all the main page parent files._
-    - **_Products.js :_**\
-      _This is the main product page. Shows all the products. Product search, filter and book, return functionalities._
+  - **_lib :_** \
+    _Holds all the libraries which used in this application._
+  - **_utils :_** \
+    _Holds all the utilities which used in this application._
 - **_.env_**
 - **_.gitignore_**
 - **_.prettierignore_**

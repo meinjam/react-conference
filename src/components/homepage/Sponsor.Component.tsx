@@ -41,7 +41,7 @@ const Sponsor = () => {
               <h1 className='sponsor-title'>{content?.title}</h1>
               <div className='sponsor-img-div'>
                 {content?.images?.map((singleImg: StaticImageData, j: number) => (
-                  <img className='flex-b sponsor-img' src={singleImg?.src} alt={`${content?.title} ${j + 1}`} />
+                  <img key={j} className='flex-b sponsor-img' src={singleImg?.src} alt={`${content?.title} ${j + 1}`} />
                 ))}
               </div>
             </div>

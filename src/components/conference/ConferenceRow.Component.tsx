@@ -25,7 +25,7 @@ const ConferenceRow = ({ data }: { data: SingleConferenceDataType }) => {
           activeItem={activeItem}
           setActiveItem={setActiveItem}
           data={data}
-          key='DraggableSidebarKey324324'
+          key='DraggableSidebarKey324rd'
         />
       </div>
 

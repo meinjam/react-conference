@@ -26,7 +26,7 @@ const ConferenceRowWeb = ({ activeItem, setActiveItem, conferenceTags, setConfer
           setConferenceTags={setConferenceTags}
           activeItem={activeItem}
           setActiveItem={setActiveItem}
-          key='DraggableSidebarKey324324'
+          key='DraggableSidebarKey324324dsx'
         />
       </div>
 
