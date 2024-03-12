@@ -10,6 +10,18 @@ import {
   SpeakersComponent,
   SponsorsComponent,
 } from '@/components/conference/ConferenceDetails.Component';
+import { ReactSortable } from 'react-sortablejs';
+
+const sortableOptions = {
+  animation: 150,
+  fallbackOnBody: true,
+  swapThreshold: 0.65,
+  ghostClass: 'ghost',
+  group: 'shared',
+  forceFallback: true,
+  handle: '.dragBtn',
+  dragClass: 'dragging',
+};
 
 interface ComponentTypes {
   activeItem: ConferenceTagType;
@@ -29,8 +41,8 @@ const ConferenceRowMobile = ({
   const [activeId, setActiveId] = useState<string>('1');
 
   return (
-    <div>
-      <Accordion type='single' collapsible defaultValue={'1'} onValueChange={(e: string) => setActiveId(e)}>
+    <Accordion type='single' collapsible defaultValue={'1'} onValueChange={(e: string) => setActiveId(e)}>
+      <ReactSortable list={conferenceTags} setList={setConferenceTags} {...sortableOptions}>
         {conferenceTags?.map((tag: ConferenceTagType) => (
           <AccordionItem value={(tag?.id).toString()} key={tag?.id}>
             {/* Expand Collapse Button */}
@@ -43,7 +55,7 @@ const ConferenceRowMobile = ({
                 )}
               >
                 <div className='bg-white p-2 md:p-3 xl:px-4 xl:py-[17px] rounded-lg'>
-                  <div className='relative w-[22px] h-5 xl:w-[25px] xl:h-[22px]'>
+                  <div className='relative w-[22px] h-5 xl:w-[25px] xl:h-[22px] dragBtn'>
                     <Image src={UpDownIcon} fill alt='sort icon' />
                   </div>
                 </div>
@@ -75,8 +87,8 @@ const ConferenceRowMobile = ({
             </AccordionContent>
           </AccordionItem>
         ))}
-      </Accordion>
-    </div>
+      </ReactSortable>
+    </Accordion>
   );
 };
 
