@@ -3,16 +3,14 @@ import Image from 'next/image';
 import TitleTopSvg from '@/assets/img/hero-title-top.svg';
 import TitleBgSvg from '@/assets/img/hero-title-bg.svg';
 import TitleMobileBgSvg from '@/assets/img/hero-title-bg-mbl.svg';
-import TopLeftBlurSvg from '@/assets/img/hero-left.svg';
 import TopLeftCubeSvg from '@/assets/img/hero-left-cube.svg';
-import TopRightBlurSvg from '@/assets/img/hero-right.svg';
 import LeftCover from '@/assets/img/hero-left-man.png';
 import LeftCoverOrnament from '@/assets/img/hero-ornament.svg';
+import LeftCoverOrnamentMobile from '@/assets/img/hero-ornament-mobile.png';
 import RightCover from '@/assets/img/hero-right-man.png';
 import RightCoverStar from '@/assets/img/hero-star.svg';
 import ButtonSvg from '@/assets/img/bi_arrow-up-right.svg';
 import ScrollDown from '@/assets/img/scroll-down.svg';
-import MobileTopGradient from '@/assets/img/mobile-gradient.svg';
 
 const Showcase = () => {
   return (
@@ -43,6 +41,8 @@ const Showcase = () => {
                   <div className='absolute -bottom-20 -right-12 -z-10'>
                     <Image src={LeftCoverOrnament} width={195} alt='left cover svg' />
                   </div>
+
+                  <HeroLeftImgBlur />
                 </div>
 
                 {/* Paragraph and Button */}
@@ -72,6 +72,7 @@ const Showcase = () => {
                     <Image src={RightCoverStar} fill alt='right cover svg' />
                   </div>
                 </div>
+                <HeroRightImgBlur />
               </div>
             </div>
           </div>
@@ -97,14 +98,13 @@ const Showcase = () => {
       </section>
 
       {/* Mobile Bottom Image */}
-      <div className='relative lg:hidden pt-16 px-6 overflow-x-hidden'>
-        <div className='absolute bottom-0 -right-[60px] -z-10'>
-          <Image src={LeftCoverOrnament} width={105} alt='left cover svg' />
+      <div className='relative lg:hidden pt-16 px-6'>
+        <div className='absolute bottom-0 -right-0 -z-10 opacity-70'>
+          <Image src={LeftCoverOrnamentMobile} height={100} alt='left cover svg' />
         </div>
         <HeroLeftImgBlur />
         <div className='relative h-52 w-40 object-cover object-center'>
           <Image className='rounded-[20px]' src={LeftCover} fill alt='left cover image' />
-          HeroLeftImgBlur
         </div>
       </div>
 
@@ -124,13 +124,13 @@ export default Showcase;
 
 const TopLeftBlur = () => {
   return (
-    <div className='absolute top-0 -left-8 md:left-0 -z-10 size-56 md:size-96 bg-[#7C3EFF] md:bg-[#d6c2ff] blur-[140px] md:blur-[120px] rounded-full'></div>
+    <div className='absolute top-0 -left-8 md:left-0 -z-10 size-56 md:size-96 bg-[#7C3EFF] md:bg-[#d6c2ff] blur-[170px] md:blur-[200px] rounded-full'></div>
   );
 };
 
 const TopLeftCube = () => {
   return (
-    <div className='absolute top-0 left-0 -z-10 opacity-40 md:opacity-50'>
+    <div className='absolute top-0 left-0 -z-10 opacity-30 md:opacity-70'>
       <Image src={TopLeftCubeSvg} height={428} alt='top left cube svg' />
     </div>
   );
@@ -138,12 +138,18 @@ const TopLeftCube = () => {
 
 const TopRightBlur = () => {
   return (
-    <div className='absolute -top-10 right-0 md:top-0 md:right-0 -z-10 size-36 md:size-[412px] bg-[#BE229C] md:bg-[#ebb9e0] blur-[100px] md:blur-[180px] rounded-full'></div>
+    <div className='absolute -top-10 right-0 md:top-0 md:right-0 -z-10 size-36 md:size-[412px] bg-[#BE229C] md:bg-[#ebb9e0] blur-[130px] md:blur-[200px] rounded-full'></div>
   );
 };
 
 const HeroLeftImgBlur = () => {
   return (
-    <div className='size-[175px] md:size-60 bg-[#2286BE]/[0.5] md:bg[#b2e5e8] absolute -left-3 rounded-full top-10 blur-[70px]'></div>
+    <div className='size-[175px] md:size-60 bg-[#b2e5e8] md:bg[#2286BE]/[.35] absolute -left-3 md:left-16 rounded-full bottom-10 md:-bottom-1/4 blur-[70px] -z-10 md:blur-[250px]'></div>
+  );
+};
+
+const HeroRightImgBlur = () => {
+  return (
+    <div className='size-[175px] md:size-64 bg-theme-yellow absolute right-0 rounded-full bottom-full md:-bottom-[20%] blur-[150px] -z-20 md:blur-[300px]'></div>
   );
 };
