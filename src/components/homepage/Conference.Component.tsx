@@ -20,7 +20,7 @@ const Conference = async () => {
         <h1 className='text-heading-2 font-bold md:text-heading-1 text-center mb-8 md:mb-10'>Conference</h1>
 
         <div className='relative'>
-          <div className='border-2-2 absolute border-opacity-20 top-10 border-theme-storm-gray h-[96%] border left-6 md:left-1/2 -z-10'></div>
+          <div className='border-2-2 absolute border-opacity-20 top-10 border-theme-storm-gray h-[95%] border left-6 md:left-1/2 -z-10'></div>
 
           {data?.conferences?.map((conference: MainConferenceDataType, i: number) => (
             <div key={conference?.id} className='mb-9 md:mb-16 flex justify-between items-start'>
@@ -54,8 +54,8 @@ const Conference = async () => {
                       <Image src={BulletIcon} alt='bullet icon' fill className='object-cover object-center' />
                     </div>
                     <div>
-                      <h4 className='text-theme-blue-gulf text-heading-4 mb-2 line-clamp-1'>{conference?.name}</h4>
-                      <p className='text-theme-storm-gray text-heading-6 line-clamp-1'>{conference?.slogan}</p>
+                      <h4 className='text-theme-blue-gulf text-heading-4 mb-2 md:line-clamp-1'>{conference?.name}</h4>
+                      <p className='text-theme-storm-gray text-heading-6 md:line-clamp-1'>{conference?.slogan}</p>
                     </div>
                   </div>
                 </Link>

@@ -117,23 +117,43 @@ const SingleCard = ({ heading, description, image, socials }: SingleCardType) =>
           {socials && (
             <div className='flex items-center gap-4'>
               {socials?.twitter && (
-                <a href={socials?.twitter} target='_blank' rel='noopener noreferrer'>
-                  <Image src={TwitterSvg} width={20} alt='social icon' />
+                <a
+                  href={socials?.twitter}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='single-card-social-img-div'
+                >
+                  <Image src={TwitterSvg} fill alt='social icon' />
                 </a>
               )}
               {socials?.linkedin && (
-                <a href={socials?.linkedin} target='_blank' rel='noopener noreferrer'>
-                  <Image src={LinkedinSvg} width={20} alt='social icon' />
+                <a
+                  href={socials?.linkedin}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='single-card-social-img-div'
+                >
+                  <Image src={LinkedinSvg} fill alt='social icon' />
                 </a>
               )}
               {socials?.dribble && (
-                <a href={socials?.dribble} target='_blank' rel='noopener noreferrer'>
-                  <Image src={DribbleSvg} width={20} alt='social icon' />
+                <a
+                  href={socials?.dribble}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='single-card-social-img-div'
+                >
+                  <Image src={DribbleSvg} fill alt='social icon' />
                 </a>
               )}
               {socials?.github && (
-                <a href={socials?.github} target='_blank' rel='noopener noreferrer'>
-                  <Image src={GithubSvg} width={20} alt='social icon' />
+                <a
+                  href={socials?.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='single-card-social-img-div'
+                >
+                  <Image src={GithubSvg} fill alt='social icon' />
                 </a>
               )}
             </div>
