@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![CHEESE!](./src/assets/img/demo.png)
 
-## Getting Started
+## &nbsp;
 
-First, run the development server:
+<h1 align="center">React Conference App </h1>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Table of Contents](#)
+- [About](#about)
+- [Prerequisites](#prerequisites)
+- [Installing](#installing)
+- [Third Party Dependencies](#third-party-dependencies)
+- [Files And Directories Tree](#files-and-directories-tree)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## About
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This is a simple next js conference app. Here are two pages. One landing page where you can see all conference list and this data is dynamic. When you click on the single conference card it go to new page. In this details page you can see conference all informationand this data is totally dynamic. technology used:
 
-## Learn More
+- Next Js 14
+- Tailwind CSS
+- Typescript
+- GraphQL
 
-To learn more about Next.js, take a look at the following resources:
+## Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Node : ^18.17.1](https://nodejs.org/en/download/)
+- [npm : ^9.11.0](https://nodejs.org/en/download/)
+- [Yarn : ^1.22.10](https://classic.yarnpkg.com/en/docs/install)
+- [Git](https://git-scm.com/downloads)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Installing
 
-## Deploy on Vercel
+- Open terminal or command prompt
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Clone the project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  > ```bash
+  > git clone https://github.com/meinjam/project-name.git
+  > cd project-name
+  > ```
+
+- Install required libraries for project
+
+> `npm install`\
+> _or,_ \
+> `yarn`
+
+- Run the code after installing the libraries
+
+> `npm run dev`\
+> _or,_ \
+> `yarn dev`
+
+_Note: Now this will run the app in the development mode and Open http://localhost:3000 to view it in the default browser._
+
+- Create build file
+
+> `npm run build` \
+> _or,_ \
+> `yarn build`
+
+## Third Party Dependencies
+
+- **_@apollo/client >= 3.9.6 :_** \
+  _Apollo Client is a fully-featured caching GraphQL client with integrations for React, Angular, and more. It allows you to easily build UI components that fetch data via GraphQL._
+
+- **_@apollo/experimental-nextjs-app-support >= 0.8.0 :_** \
+  _Apollo Client support for the Next.js App Router_
+
+- **_@radix-ui/react-accordion >= 1.1.2 :_** \
+  _A vertically stacked set of interactive headings that each reveal an associated section of content._
+
+- **_clsx >= 2.1.0 :_** \
+  _A tiny (239B) utility for constructing className strings conditionally. Also serves as a faster & smaller drop-in replacement for the classnames module._
+
+- **_dayjs >= 1.11.10 :_** \
+  _Day.js is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API. If you use Moment.js, you already know how to use Day.js._
+
+- **_react-sortablejs >= 6.1.4 :_** \
+  _Sortable affects the DOM, adding, and removing nodes/css when it needs to in order to achieve the smooth transitions we all know an love._
+
+- **_sass >= 1.71.1 :_** \
+  _A pure JavaScript implementation of Sass. Sass makes CSS fun again._
+
+- **_sortablejs >= 1.15.2 :_** \
+  _Sortable is a JavaScript library for reorderable drag-and-drop lists._
+
+- **_tailwind-merge >= 2.2.1 :_** \
+  _Utility function to efficiently merge Tailwind CSS classes in JS without style conflicts._
+
+## Files And Directories Tree
+
+- **_.husky :_**\
+  _Husky enhances your commits and more 🐶 woof! Automatically lint your commit messages, code, and run tests upon committing or pushing._
+- **_public :_**\
+  _Holds all public file._
+- **_src :_** \
+  _Holds js files which will be mostly edited._
+  - **_App.js :_** \
+    _Holds main Tasks page._
+  - **_assets :_** \
+    _Holds the static files like scss amd images._
+    - **_scss :_**\
+      _Holds the required scss for app._
+    - **_img :_** \
+      _Holds the required images for pages and components._
+  - **_components :_** \
+    _Holds all the component file regarding every page._
+  - **_pages :_** \
+    _Holds all the main page parent files._
+    - **_Products.js :_**\
+      _This is the main product page. Shows all the products. Product search, filter and book, return functionalities._
+- **_.env_**
+- **_.gitignore_**
+- **_.prettierignore_**
+- **_.prettier_**
+- **_next-env.d.ts_**
+- **_next.config.mjs_**
+- **_postcss.config.js_**
+- **_package.json_**
+- **_package-lock.json_**
+- **_README.md_**
+- **_tailwind.config.ts_**
+- **_tsconfig.json_**

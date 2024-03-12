@@ -3,9 +3,6 @@
 @tailwind utilities;
 
 .section-heading {
-  // @apply mb-6 text-center md:mb-8;
-  // @apply mb-8 text-center md:mb-10;
-  // @apply mb-3 md:mb-4;
   @apply text-heading-2 font-bold md:text-heading-1;
 }
 

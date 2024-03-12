@@ -33,14 +33,6 @@ const Conference = async () => {
               </div>
 
               {/* Middle Icon */}
-              {/* <div
-                className={cn(
-                  'order-1 mt-8 rounded-full border p-3 md:order-2 md:mt-0',
-                  i === 0 ? 'border-theme-yellow bg-[#fff9eb]' : 'border-theme-sliver bg-theme-bianca'
-                )}
-              >
-                <SvgItem active={i === 0 ? true : false} />
-              </div> */}
               <div className='order-1 mt-6 rounded-full bg-white py-2 md:order-2 md:-my-2'>
                 <div
                   className={cn(
