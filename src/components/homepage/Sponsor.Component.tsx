@@ -34,7 +34,7 @@ const Sponsor = () => {
   return (
     <section className='bg-theme-bianca py-14 md:py-24'>
       <div className='container'>
-        <h1 className='text-center text-heading-2 font-bold md:text-heading-1 mb-6 md:mb-8'>Our Sponsor</h1>
+        <h1 className='section-heading mb-6 text-center md:mb-8'>Our Sponsor</h1>
         <div className='space-y-8'>
           {contents?.map((content: ContentTypes, i: number) => (
             <div key={i}>

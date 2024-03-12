@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import Link from 'next/link';
 import BulletIcon from '@/assets/img/bullet-icon.svg';
 import Image from 'next/image';
+import { cn } from '@/lib/cn/cn';
 
 const Conference = async () => {
   const { data, loading, error } = await getClient().query({ query: getAllConferences });
@@ -15,47 +16,58 @@ const Conference = async () => {
   // console.log('error', error);
 
   return (
-    <section id='conference-details' className='pt-5 mt-28 md:mt-60 mb-10 md:mb-24'>
+    <section id='conference-details' className='mb-10 mt-28 pt-5 md:mb-24 md:mt-60'>
       <div className='container max-w-[1088px]'>
-        <h1 className='text-heading-2 font-bold md:text-heading-1 text-center mb-8 md:mb-10'>Conference</h1>
+        <h1 className='section-heading mb-8 text-center md:mb-10'>Conference</h1>
 
         <div className='relative'>
-          <div className='border-2-2 absolute border-opacity-20 top-10 border-theme-storm-gray h-[95%] border left-6 md:left-1/2 -z-10'></div>
+          <div className='border-2-2 absolute left-6 top-10 -z-10 h-[95%] border border-theme-storm-gray border-opacity-20 md:left-1/2'></div>
 
           {data?.conferences?.map((conference: MainConferenceDataType, i: number) => (
-            <div key={conference?.id} className='mb-9 md:mb-16 flex justify-between items-start'>
+            <div key={conference?.id} className='mb-9 flex items-start justify-between md:mb-16'>
               {/* Conference Date */}
-              <div className={`hidden md:block w-5/12 pt-4 ${i % 2 === 0 ? 'order-3' : ''}`}>
+              <div className={`hidden w-5/12 pt-4 md:block ${i % 2 === 0 ? 'order-3' : ''}`}>
                 <p className={`text-heading-6 text-theme-storm-gray ${i % 2 === 0 ? '' : 'text-end'}`}>
                   {dayjs(conference?.startDate).format('DD MMMM YYYY')}
                 </p>
               </div>
 
               {/* Middle Icon */}
-              <div
-                className={`mt-8 md:mt-0 border rounded-full p-3 order-1 md:order-2
-                  ${i === 0 ? 'border-theme-yellow bg-[#fff9eb]' : 'border-theme-sliver bg-theme-bianca'}
-                `}
+              {/* <div
+                className={cn(
+                  'order-1 mt-8 rounded-full border p-3 md:order-2 md:mt-0',
+                  i === 0 ? 'border-theme-yellow bg-[#fff9eb]' : 'border-theme-sliver bg-theme-bianca'
+                )}
               >
                 <SvgItem active={i === 0 ? true : false} />
+              </div> */}
+              <div className='order-1 mt-6 rounded-full bg-white py-2 md:order-2 md:-my-2'>
+                <div
+                  className={cn(
+                    'rounded-full border p-3',
+                    i === 0 ? 'border-theme-yellow bg-[#fff9eb]' : 'border-theme-sliver bg-theme-bianca'
+                  )}
+                >
+                  <SvgItem active={i === 0 ? true : false} />
+                </div>
               </div>
 
               {/* Conference Card */}
-              <div className={`ml-5 w-full md:ml-0 md:w-5/12 group ${i % 2 === 0 ? 'order-1' : 'order-3'}`}>
-                <p className={`md:hidden text-heading-6 text-theme-storm-gray mb-[14px]`}>
+              <div className={`group ml-5 w-full md:ml-0 md:w-5/12 ${i % 2 === 0 ? 'order-1' : 'order-3'}`}>
+                <p className={`mb-[14px] text-heading-6 text-theme-storm-gray md:hidden`}>
                   {dayjs(conference?.startDate).format('DD MMMM YYYY')}
                 </p>
                 <Link
                   href={`/conference/${conference?.id}`}
-                  className='shadow-c-card-shadow rounded-lg p-[18px] md:px-4 md:py-7 block border-t-4 border-theme-sliver group-hover:border-theme-yellow group-hover:shadow-lg hover:-translate-y-1 duration-500 ease-in-out'
+                  className='block rounded-lg border-t-4 border-theme-sliver p-[18px] shadow-c-card-shadow duration-500 ease-in-out hover:-translate-y-1 group-hover:border-theme-yellow group-hover:shadow-lg md:px-4 md:py-7'
                 >
                   <div className='flex items-start gap-4'>
-                    <div className='w-4 h-4 relative flex-shrink-0 mt-1 md:mt-[2px]'>
+                    <div className='relative mt-1 h-4 w-4 flex-shrink-0 md:mt-[2px]'>
                       <Image src={BulletIcon} alt='bullet icon' fill className='object-cover object-center' />
                     </div>
                     <div>
-                      <h4 className='text-theme-blue-gulf text-heading-4 mb-2 md:line-clamp-1'>{conference?.name}</h4>
-                      <p className='text-theme-storm-gray text-heading-6 md:line-clamp-1'>{conference?.slogan}</p>
+                      <h4 className='mb-2 text-heading-4 text-theme-blue-gulf md:line-clamp-1'>{conference?.name}</h4>
+                      <p className='text-heading-6 text-theme-storm-gray md:line-clamp-1'>{conference?.slogan}</p>
                     </div>
                   </div>
                 </Link>
@@ -88,21 +100,3 @@ const SvgItem = ({ active }: { active: boolean }) => {
     </svg>
   );
 };
-
-{
-  /* <Link
-              href={`/conference/${conference?.id}`}
-              key={conference?.id}
-              className='shadow mb-16 rounded-lg px-4 py-7 block border-t-4 border-theme-sliver'
-            >
-              <div className='flex items-start gap-4'>
-                <div className='size-[16px] bg-theme-yellow rounded-full flex items-center justify-center mt-[2px]'>
-                  <span className='size-1 bg-white rounded-full'></span>
-                </div>
-                <div>
-                  <h4 className='text-theme-blue-gulf text-heading-4 mb-2'>{conference?.name}</h4>
-                  <p className='text-theme-storm-gray text-heading-6 leading-4'>{conference?.slogan}</p>
-                </div>
-              </div>
-            </Link> */
-}

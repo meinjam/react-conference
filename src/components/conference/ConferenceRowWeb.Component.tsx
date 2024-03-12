@@ -20,7 +20,7 @@ const ConferenceRowWeb = ({ activeItem, setActiveItem, conferenceTags, setConfer
   return (
     <div className='grid grid-rows-1 md:grid-cols-12'>
       {/* Draggable Sidebar */}
-      <div className='md:col-span-4 max-w-full md:max-w-[90%]'>
+      <div className='max-w-full md:col-span-4 md:max-w-[90%]'>
         <DraggableSidebar
           conferenceTags={conferenceTags}
           setConferenceTags={setConferenceTags}
@@ -31,7 +31,7 @@ const ConferenceRowWeb = ({ activeItem, setActiveItem, conferenceTags, setConfer
       </div>
 
       {/* Content Items */}
-      <div className='md:col-span-8 p-5 md:p-7 lg:p-11 xl:p-[52px] bg-theme-bianca rounded-xl'>
+      <div className='rounded-xl bg-theme-bianca p-5 md:col-span-8 md:p-7 lg:p-11 xl:p-[52px]'>
         {activeItem?.name === 'Organizer' && (
           <OrganizerComponent key='OrganizerComponent324' data={data?.conference?.organizers} />
         )}

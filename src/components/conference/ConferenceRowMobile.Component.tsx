@@ -50,12 +50,12 @@ const ConferenceRowMobile = ({
               <div
                 className={cn(
                   'sidebar-child duration-500',
-                  activeId === (tag?.id).toString() ? 'bg-theme-yellow border-theme-yellow shadow-lg' : ''
+                  activeId === (tag?.id).toString() ? 'border-theme-yellow bg-theme-yellow shadow-lg' : ''
                   // 'bg-theme-yellow border-theme-yellow shadow-lg'
                 )}
               >
-                <div className='bg-white p-2 md:p-3 xl:px-4 xl:py-[17px] rounded-lg'>
-                  <div className='relative w-[22px] h-5 xl:w-[25px] xl:h-[22px] dragBtn'>
+                <div className='rounded-lg bg-white p-2 md:p-3 xl:px-4 xl:py-[17px]'>
+                  <div className='dragBtn relative h-5 w-[22px] xl:h-[22px] xl:w-[25px]'>
                     <Image src={UpDownIcon} fill alt='sort icon' />
                   </div>
                 </div>

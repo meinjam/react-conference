@@ -57,25 +57,23 @@ export const ScheduleComponent = ({ data }: { data: ScheduleType[] }) => {
     <div className='details-card-parent'>
       {data?.length !== 0 ? (
         data?.map((schedule: ScheduleType, i: number) => (
-          <div key={i} className='bg-white rounded-lg px-5 md:px-8 xl:px-10 py-[14px] md:py-5 xl:py-6'>
+          <div key={i} className='rounded-lg bg-white px-5 py-[14px] md:px-8 md:py-5 xl:px-10 xl:py-6'>
             <div className='mb-5 flex items-center justify-between'>
-              <h4 className='text-heading-5 md:text-heading-3 font-bold'>
+              <h4 className='text-heading-5 font-bold md:text-heading-3'>
                 {dayjs(schedule?.day).format('MMMM DD, YYYY')}
               </h4>
-              <p className='text-theme-blue-gulf text-heading-7 md:text-heading-5 line-clamp-2'>
+              <p className='line-clamp-2 text-heading-7 text-theme-blue-gulf md:text-heading-5'>
                 {dayjs(schedule?.day).format('dddd')}
               </p>
             </div>
             <div className='space-y-4'>
               {schedule?.intervals?.map((interval: IntervalType, j: number) => (
-                <div key={j} className='text-heading-6 md:text-heading-5 text-[#0A142F]'>
+                <div key={j} className='text-heading-6 text-[#0A142F] md:text-heading-5'>
                   <h1>
                     Duration : {interval?.begin} - {interval?.end}
                   </h1>
                   <ul className='list-disc pl-8 xl:pl-10'>
-                    {interval?.sessions?.map((session: SessionType, k: number) => (
-                      <li key={k}>{session?.title}</li>
-                    ))}
+                    {interval?.sessions?.map((session: SessionType, k: number) => <li key={k}>{session?.title}</li>)}
                   </ul>
                 </div>
               ))}
@@ -107,13 +105,13 @@ export const SponsorsComponent = ({ data }: { data: SponsorType[] }) => {
 
 const SingleCard = ({ heading, description, image, socials }: SingleCardType) => {
   return (
-    <div className='flex md:items-center gap-4 md:gap-5 lg:gap-8 xl:gap-10'>
-      <div className='relative size-[88px] md:size-24 lg:size-32 xl:size-36 shrink-0'>
-        <Image src={image} alt='organizer image' fill className='object-contain object-center rounded-lg' />
+    <div className='flex gap-4 md:items-center md:gap-5 lg:gap-8 xl:gap-10'>
+      <div className='relative size-[88px] shrink-0 md:size-24 lg:size-32 xl:size-36'>
+        <Image src={image} alt='organizer image' fill className='rounded-lg object-contain object-center' />
       </div>
       <div className='w-full'>
-        <div className='flex flex-col md:flex-row justify-between gap-2 md:items-center mb-2 lg:mb-5 flex-wrap'>
-          <h4 className='text-heading-5 md:text-heading-3 font-bold'>{heading}</h4>
+        <div className='mb-2 flex flex-col flex-wrap justify-between gap-2 md:flex-row md:items-center lg:mb-5'>
+          <h4 className='text-heading-5 font-bold md:text-heading-3'>{heading}</h4>
           {socials && (
             <div className='flex items-center gap-4'>
               {socials?.twitter && (
@@ -159,7 +157,7 @@ const SingleCard = ({ heading, description, image, socials }: SingleCardType) =>
             </div>
           )}
         </div>
-        <p className='text-theme-blue-gulf text-heading-7 md:text-heading-5 leading-4 md:leading-5 line-clamp-5 md:line-clamp-2'>
+        <p className='line-clamp-5 text-heading-7 leading-4 text-theme-blue-gulf md:line-clamp-2 md:text-heading-5 md:leading-5'>
           {description}
         </p>
       </div>

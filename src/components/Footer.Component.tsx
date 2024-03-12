@@ -9,14 +9,14 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className='bg-theme-blue-gulf text-white py-10 md:py-16 text-center'>
+    <footer className='bg-theme-blue-gulf py-10 text-center text-white md:py-16'>
       <div className='container'>
         <Link href='/' className='flex justify-center'>
-          <div className='relative w-[116px] md:w-[175px] h-8 md:h-12'>
+          <div className='relative h-8 w-[116px] md:h-12 md:w-[175px]'>
             <Image src={FooterLogo} fill className='mx-auto' alt='main logo' />
           </div>
         </Link>
-        <ul className='flex items-center justify-center gap-7 mt-12 md:mt-16 mb-6 md:mb-6'>
+        <ul className='mb-6 mt-12 flex items-center justify-center gap-7 md:mb-6 md:mt-16'>
           <li>
             <a href='#'>
               <Image src={TwitterLogo} width={24} alt='twitter logo' />

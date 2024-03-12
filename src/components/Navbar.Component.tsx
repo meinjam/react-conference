@@ -8,11 +8,11 @@ const Navbar = () => {
   return (
     <nav className='py-8 lg:py-10'>
       <div className='container'>
-        <div className='flex justify-between items-center'>
-          <Link href='/' className='relative w-[58px] md:w-[117px] h-4 md:h-8'>
+        <div className='flex items-center justify-between'>
+          <Link href='/' className='relative h-4 w-[58px] md:h-8 md:w-[117px]'>
             <Image src={MainLogo} fill alt='main logo' />
           </Link>
-          <ul className='text-heading-4 font-medium lg:flex items-center gap-x-14 hidden '>
+          <ul className='hidden items-center gap-x-14 text-heading-4 font-medium lg:flex '>
             <li>
               <a href='#'>About Us</a>
             </li>
@@ -29,7 +29,7 @@ const Navbar = () => {
               <a href='#'>Say Hi</a>
             </li>
           </ul>
-          <div className='size-5 relative'>
+          <div className='relative size-5'>
             <Image className='cursor-pointer' src={TogglerIcon} fill alt='toggler icon' />
           </div>
         </div>
